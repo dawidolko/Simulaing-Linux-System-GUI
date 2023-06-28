@@ -1,31 +1,30 @@
 # Internet-Applications
 
-## **Opis:**
-Internet-Applications to repozytorium poświęcone programowaniu aplikacji internetowych. Znajdziesz tutaj przykładowe projekty, narzędzia i materiały edukacyjne związane z tworzeniem aplikacji dostępnych przez Internet.
+## **Description:**
+Internet-Applications is a repository dedicated to web application development. Here you will find example projects, tools and educational materials related to creating applications available over the Internet.
 
-## **Struktura Repozytorium:**
-/Projekty: Ten folder zawiera różne projekty, w których skupiamy się na programowaniu aplikacji internetowych. Każdy projekt posiada swój własny folder z opisem, kodem źródłowym i plikami projektowymi.
+## **Repository Structure:**
+/Projects: This folder contains various projects where we focus on web application development. Each project has its own folder with description, source code and project files.
 
-/Narzędzia: W tym folderze znajdują się narzędzia programistyczne, frameworki i biblioteki, które ułatwiają tworzenie aplikacji internetowych.
+/Tools: This folder contains development tools, frameworks, and libraries that make web application development easier.
 
-/Materiały: Tutaj znajdziesz materiały edukacyjne, takie jak tutoriale, poradniki i artykuły, które pomogą Ci w nauce i zrozumieniu tworzenia aplikacji internetowych.
+/Resources: Here you will find educational materials such as tutorials, guides and articles to help you learn and understand web application development.
 
-## **Jak zacząć:**
+## **How ​​to start:**
 
-Sklonuj repozytorium na swój lokalny komputer:
+Clone the repository to your local computer:
 ```
-git clone https://github.com/twojenazwauzytkownika/Internet-Applications.git
+git clone https://github.com/yourusername/Internet-Applications.git
 ```
 
-Przeglądaj dostępne projekty, narzędzia i materiały w odpowiednich folderach.
+Browse available projects, tools and materials in their respective folders.
 
-Wykorzystaj dostępne zasoby i narzędzia, aby tworzyć aplikacje internetowe dostępne przez Internet.
+Leverage available resources and tools to create web applications accessible over the Internet.
 
-## **Wymagania systemowe**
-Aby rozpocząć programowanie aplikacji internetowych, będziesz potrzebować edytora kodu, narzędzi programistycznych oraz platformy do uruchamiania aplikacji internetowych, takiej jak serwer WWW. Upewnij się, że masz zainstalowane niezbędne oprogramowanie zgodnie z preferencjami i potrzebami projektu.
+## **System requirements**
+To start developing web applications, you will need a code editor, development tools, and a platform to run web applications, such as a web server. Make sure you have the necessary software installed according to your project preferences and needs.
 
-## **Wkład i Wsparcie**
-Jeśli chcesz przyczynić się do tego repozytorium, możesz zgłaszać problemy, tworzyć pull requesty lub udostępniać swoje własne projekty związane z programowaniem aplikacji internetowych. Wszelkie wkłady są mile widziane!
+## **Contributions and Support**
+If you want to contribute to this repository, you can report issues, create pull requests or share your own web development projects. Any contributions are welcome!
 
-Jeśli masz pytania lub potrzebujesz pomocy, skontaktuj się ze mną poprzez e-mail lub przez platformę GitHub.
-
+If you have any questions or need help, please contact me via email or GitHub.
