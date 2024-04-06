@@ -6566,7 +6566,7 @@
                             overflow: "hidden",
                           },
                         },
-                        [t._v(" - GoodManWEN.github.io - Visual Studio Code ")]
+                        [t._v(" - linux.dawidolko.pl - Visual Studio Code ")]
                       ),
                     ]
                   ),
@@ -6589,7 +6589,7 @@
                       i("iframe", {
                         staticClass: " zoomined-frame ",
                         attrs: {
-                          src: "https://github1s.com/GoodManWEN/GoodManWEN.github.io/blob/main/src/components/Interlude.vue",
+                          src: "https://github1s.com/dawidolko/Simulaing-Linux-System-GUI/blob/main/src/components/Interlude.vue",
                           frameborder: "0",
                         },
                       }),
@@ -7111,7 +7111,7 @@
                             overflow: "hidden",
                           },
                         },
-                        [t._v(" guest@wen-PC: ~/ ")]
+                        [t._v(" guest@dawidolko-PC: ~/ ")]
                       ),
                     ]
                   ),
@@ -7197,7 +7197,7 @@
           },
           header: function () {
             var t,
-              e = "guest@wen-PC: ~/",
+              e = "guest@dawidolko-PC: ~/",
               s = Object(M["a"])(this.path_stack);
             try {
               for (s.s(); !(t = s.n()).done; ) {
@@ -8253,7 +8253,7 @@
                                                       staticClass:
                                                         "tw-mt-3 tw-text-gray-400",
                                                     },
-                                                    [t._v("GoodManWEN")]
+                                                    [t._v("dawidolko")]
                                                   ),
                                                   i(
                                                     "div",
@@ -8263,7 +8263,7 @@
                                                     },
                                                     [
                                                       t._v(
-                                                        " Hi👋, this is WEN, your solution provider."
+                                                        " Hi👋, this is dawidolko, your solution provider."
                                                       ),
                                                     ]
                                                   ),
@@ -8298,7 +8298,7 @@
                                                     staticClass:
                                                       "tw-w-140 tw-h-40",
                                                     attrs: {
-                                                      src: "https://github-readme-stats.vercel.app/api?username=GoodManWEN&show_icons=true&line_height=24",
+                                                      src: "https://github-readme-stats.vercel.app/api?username=dawidolko&show_icons=true&line_height=24",
                                                       alt: "",
                                                     },
                                                   }),
@@ -8306,7 +8306,7 @@
                                                     staticClass:
                                                       "tw-mt-6  tw-w-120 tw-h-72",
                                                     attrs: {
-                                                      src: "https://github-readme-stats.vercel.app/api/top-langs?username=goodmanwen",
+                                                      src: "https://github-readme-stats.vercel.app/api/top-langs?username=dawidolko",
                                                       alt: "",
                                                     },
                                                   }),
@@ -8345,7 +8345,7 @@
                                                   i("img", {
                                                     staticClass: "tw-mt-10",
                                                     attrs: {
-                                                      src: "https://www.codewars.com/users/GoodManWEN/badges/large",
+                                                      src: "https://www.codewars.com/users/dawidolko/badges/large",
                                                       alt: "",
                                                     },
                                                   }),
@@ -9015,7 +9015,7 @@
           },
           open_project: function () {
             window.open(
-              "https://github.com/GoodManWEN/GoodManWEN.github.io",
+              "https://github.com/dawidolko/Simulaing-Linux-System-GUI",
               "_blank"
             ),
               this.$store.commit("hide_context_menu");
