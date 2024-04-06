@@ -1,77 +1,73 @@
-![]()
+# linux.dawidolko.pl
 
-# About linux.dawidolko.pl
+```
+This is a web-driven blog tool that emulates the Deepin desktop UI, entirely reliant on Github Pages for open-source deployment. You can use it for a personal blog or as a personal resume.
 
-A website simulating linux system's GUI, using theme of Deepin distro. You can write blogs with markdown and use it to serve your own technical resumes.
+This project was born by chance, as there was a need to organize a blog for project display recently. The author saw a similar version for Ubuntu on a forum, but since it was written in react, which I am not familiar with, I wanted to migrate a similar version to vue, hence this project.
 
-#### [中文文档](https://github.com/dawidolko/Simulaing-Linux-System-GUI/blob/main/misc/readme_chs.md)
+When planning to start a project, the first challenge is deciding which system to emulate. Since the most popular Ubuntu has been done by others, reinventing the wheel seemed pointless. The author had also seen a MacOS version before, and Windows seemed too costly to mimic in detail due to many years of development. Despite the richness of Linux distributions, our choices seemed limited, with daily-use Red Hat-based distributions not focusing on desktop experience, making implementation less meaningful. The remaining widely accepted distributions were Manjaro, Fedora, and some so-called Gaming ready distros. I finally chose Deepin, which I haven't used but have heard a lot about, and the project is available on Github for vue developers worldwide, also serving as promotion for a domestic product.
+```
 
 ## Quick Start
 
-This project is originally designed to be host on github pages. If this is the way you expect, you follow these steps
+This project is designed to be served by Github Pages, with all APIs being converted into static files for distribution. If you want to run and debug locally, try the following steps:
 
 ```
-1. Fork this project.
-2. Goto settings page to link your website to a specified URL.
-3. Start the actions manually (According to github's default policy, actions will not be started
-   automatically until they are confirmed manually).
-4. Update line 18 of file /.github/workflows/AutoUpdate.yml, connect it to your repo's address.
-```
-
-After setting up, if your configuration is correct, then the project will run as expected. All of your changes in `/blog` directory will be identically projected onto the linked website (according to your settings).
-
-Nevertheless, some people may want to self-host it (locally), then you should follow these steps:
-
-```
-git clone https://github.com/dawidolko/Simulaing-Linux-System-GUI.git
-cd GoodManWEN.github.io.git
+git clone https://github.com/dawidolko/Simulaing-Linux-System-GUI
+cd Simulaing-Linux-System-GUI
 npm install
 npm run serve
 ```
 
-At this point you should get the functionality same as a basic blog framework, and if you want to change the blog content to your own, you should modify **you should change the content in the /blog directory**, and then:
+If your npm and vue-cli versions are appropriate, this should be enough to get the program running. You can find the used versions in the following section and `package.json` for reference.
+
+If you wish to modify blog content, you should directly modify the content in the `/blog` directory, with all .md content being directly mapped to the website.
+
+After modifications, execute the following commands to generate static files.
 
 ```
 python3 generate.py
 npm run build
 ```
 
-This will convert the pages into static distribution files in `/docs` directory, you can serve them in any web framework.
+Since vue-cli's default settings were modified, static files are generated in the /docs directory.
 
-### What's the difference from other comparable programs?
+### How is this project different from similar desktop emulations?
 
-I happened to write this project because I personally need a project demonstration platform recently, other than comparable programs, I believe this project should have some usefulness in addition to aesthetics. Design-wise, it implements a complete window UI and a basic nested directory functionality. So you can show some folder simulatively as your blog, which accepts markdown files will reduce the cost of migration, and you can resize and stretch the window freely for easy navigation.
+The main focus is on a more complete window system implemented in this project. You can freely create multiple windows, move, resize them, and manage their display order just like in a normal operating system. It implements a simple recursive directory system, so you can map an entire folder as your blog. Additionally, a toy terminal is included.
 
-### How to update blog contents?
+### How can I update my blog?
 
-If your project is hosted by **Github Pages**, you can simply modify the contents of the blog directory and then submit a commit. Content will be update automatically by Actions, and then distributed to the website (there may be a delay in updates due to caching policies).
+If your blog is forked from this project and fully served by Github Pages, you only need to modify the content in the /blog directory and submit a commit. The compilation and distribution of static files will be automatically done by Actions in the background.
 
-### About blog features
+If you directly forked this project, you need to check if your Actions are executed correctly. To my knowledge, some actions are automatically turned off upon forking until manually reactivated.
 
-To make it easier for you to post your articles as hyperlinks on third-party platforms, you can use the following routing form to allow users to open your specified posts directly with a unique link:
+### How can I modify the music player?
+
+This project implements a simple music player based on `vue-aplayer`. To modify the playlist, please change the `musics.json` file in the `public` directory, following the specified format. Due to copyright policies, I have not provided music source addresses in the default version. You can configure your distribution strategy and paste the music access links accordingly.
+
+By default, if your music covers are self-distributed (not through a third party), the covers' directory is `/public/musiccovers`
+
+### Further Explanation of Blog Functionality
+
+To implement basic blog functionality, a typical requirement is to publish article links on third-party platforms, allowing users to directly locate your articles through the links. To achieve this effect, follow the routing rules below to construct links.
 
 ```
-   https://{{host}}/#/desktop/post/{{article_file_name}}.md
+   https://{{domain}}/#/desktop/post/{{filename}}.md
 
-   e.g.
+   For example:
    https://linux.dawidolko.pl/#/desktop/post/README.md
 ```
 
-Notably that program will recursively look for the first matched file in the file structure, which means that if you have multiple files using the same file name (like README.md) but distributed in different folders, this will only match the first of them.
+On the logic level, the program recursively searches and returns the **first** item in the file tree that matches the required value. This means if you have multiple files with the same name but placed in different directories, the program can only return one and ignore the others. You do not need to worry about spaces in filenames, as they will be automatically escaped.
 
-If there is no match, then a 404 file will be returned.
+If no match is found, a 404 article will be displayed.
 
-Regarding the logic to generate title & abstract, the article will be titled with the first recognized `# line` and the first subsequent line without a punctuation mark will be recognized as abstract.
+Articles are recognized by the program as follows: the program identifies the first line starting with `#` as the title, and the first line starting with a non-punctuation character as the summary.
 
-### What if I'd like to customize the music module?
+### Acknowledgments
 
-This project has a simple built-in music module built using Aplayer. Considering the copyright policy, you need to set up your music play list yourself. The relevant configuration files are stored in `/public/musics.json`, you need to follow the same format when edit. Generally speaking, you need to focus on the name, the author, the link to the source and the link to the cover of the music.
-
-By default, there's no direct music download links available, and all the album covers are configured in the `/public/musiccovers` directory.
-
-### Packages
-
-This website (source code here) uses these sources:
+This project is based on the following open-source projects:
 
 ```
 @vue/cli 4.5.11, Blank template with ESLint
@@ -80,49 +76,52 @@ node-sass & sass-loader
 tailwindcss + postcss
 animate.css
 vuex
+
+
 vue-router
 axios & vue-axios
 vue-wechat-title
 ```
 
-Markdown render is powered by
+Markdown rendering is based on:
 
 ```
 markdown-it-vue
 ```
 
-Music player is basic on
+The music player is based on:
 
 ```
 vue-aplayer
 ```
 
-This project is inspired by:
+Inspired by the following projects:
 
-- [https://github.com/vivek9patel/vivek9patel.github.io](https://github.com/vivek9patel/vivek9patel.github.io)
+- [https://github.com/dawidolko/Simulaing-Ubuntu-System-GUI](https://linux.dawidolko.pl)
 - [https://codepen.io/Krishna1947/pen/KKgZgLd](https://codepen.io/Krishna1947/pen/KKgZgLd)
-- [https://github.com/puruvj/macos-web](https://github.com/puruvj/macos-web)
 
-### Contributing
+### Contribution Methods
 
-Any improvements that wish to improve this site are welcome, you need to contribute to this project by submitting a PR. Since the author himself is not a professional programmer focused on front-end, he is not familiar with the way how front-end tests are deployed, so you shoulddescribe clearly in the PR the reason for your submission, all the places you are modifying, and what we should expect to get out of it.
+Any form of contribution to improve this system is welcome. However, since the author is a non-professional frontend programmer and is not familiar with how GUI should deploy automatic tests, this poses some difficulties for code merging in the open-source community. Without automatic tests, if you wish to submit a PR, you should indicate in the PR the reason for your changes, all the places modified, and the expected effects.
 
 ##### [Guidelines for further development](https://github.com/dawidolko/Simulaing-Linux-System-GUI/blob/main/misc/Guidelines%20for%20further%20development.md)
 
-### Current deficiencies
+### Existing Issues
 
-As mentioned above, since my daily work field is mainly not front-end programming in the past years. As the project is basicly comes from fortuity, I got not many time to finish it other than working hours. The basic coding time is about three days, So this will definitely leave a lot of defects. During the implementation that I realize there are still noticeable differences between the project and the original deepin's UI system, simply put:
+As the author is from a big data background, this is a severe case of a non-professional frontend developer running off-topic. Due to limited time, the actual coding time was about three days, and many places were implemented with the principle of simplicity for small-scale data, inevitably bringing many problems.
 
-- Fonts, I didn't have time to tune the fonts, which caused them to differ significantly from the originals.
-- Icons, to get the icons quickly, they come from screenshots.
-- Except for some parts, the animations are mainly come from `animate.css`, the performance is different from the original version.
+Currently known UI differences from the native interface:
 
-Similarly, this framework does not perform well on mobile platforms. This is partly due to compatibility issues with `animate.css`, and others comes from that many designs are designed for desktop platforms, and I don't know how to arrange them on mobile screens.
+- I didn't have time to adjust fonts, and the interface uses a set of universal fonts, which have a significant difference from the original.
+- Icons are all from screenshots to minimize acquisition difficulties.
+- Most animations in this framework come from animate.css, showing some differences from native performance.
+
+Similarly, although this module adheres to responsive design, it performs poorly on mobile platforms. Partly due to animate.css compatibility issues on mobile platforms and partly because many UI components were designed specifically for desktop platforms, I do not know how they should be laid out on mobile platforms.
 
 ## About Deepin
 
-The author of this project has no official relationship with deepin, if you wish to try out the deepin system after viewing this project, please visit [https://www.deepin.org/en/](https://www.deepin.org/en/)
+I have no affiliation with Deepin officials; this was purely written out of interest and to promote a domestic system, not for any form of profit from the project. If you are interested in Deepin, please visit the official website [https://www.deepin.org/](https://www.deepin.org/)
 
-### Spacial thanks
+### Thanks
 
-To you, hope you enjoy this website.
+This project is open-source under the AGPLv3 license. Thank you for browsing this project, and I hope you find joy in exploring it.
