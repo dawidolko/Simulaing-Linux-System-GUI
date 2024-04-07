@@ -1,6 +1,34 @@
 # linux.dawidolko.pl
 
 ```
+.
+├── .github
+│ └── ...
+├── docs
+│ └── ...
+├── misc
+│ └── ...
+├── public
+│ └── ...
+├── src
+│ ├── .env
+│ ├── .env.production
+│ └── ...
+├── .gitignore
+├── babel.config.js
+├── CNAME
+├── generate.py
+├── LICENSE
+├── package-lock.json
+├── package.json
+├── postcss.config.js
+├── README.md
+├── tailwind.config.js
+├── update.cmd
+└── vue.config.js
+```
+
+```
 This is a web-driven blog tool that emulates the Deepin desktop UI, entirely reliant on Github Pages for open-source deployment. You can use it for a personal blog or as a personal resume.
 
 This project was born by chance, as there was a need to organize a blog for project display recently. The author saw a similar version for Ubuntu on a forum, but since it was written in react, which I am not familiar with, I wanted to migrate a similar version to vue, hence this project.
