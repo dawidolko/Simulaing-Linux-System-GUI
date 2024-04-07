@@ -8036,7 +8036,7 @@
                             " tw-ml-4 tw-font-bold tw-tracking-wider",
                           staticStyle: { "pointer-events": "auto" },
                         },
-                        [t._v(" About WEN ")]
+                        [t._v(" About dawidolko ")]
                       ),
                     ]
                   ),
@@ -9402,13 +9402,13 @@
           path: "/desktop/post/:postfilename",
           name: "DesktopWithPost",
           component: _i,
-          meta: { title: "Welcom to WEN's blog" },
+          meta: { title: "Welcom to dawidolko's blog" },
         },
         {
           path: "/desktop",
           name: "Desktop",
           component: _i,
-          meta: { title: "Welcom to WEN's blog" },
+          meta: { title: "Welcom to dawidolko's blog" },
         },
         { path: "*", redirect: "/login" },
       ],
